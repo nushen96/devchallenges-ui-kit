@@ -33,6 +33,11 @@ const ButtonsContent = () => {
           </Button>
         </LabeledElement>
       </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Button disableShadow />">
+          <Button disableShadow>No shadow</Button>
+        </LabeledElement>
+      </ContentRow>
     </MainContent>
   );
 };

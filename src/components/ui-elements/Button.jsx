@@ -22,6 +22,7 @@ const Button = styled.button`
   background-color: #e0e0e0;
   border: none;
   border-radius: 6px;
+  box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
 
   &:hover,
   &:focus {
@@ -58,5 +59,10 @@ const Button = styled.button`
     
         ${(props) =>
     props.variant === "text" && props.secondState && backgroundlessHoverStyles}
+    ${props => (
+      props.disableShadow && css`
+        box-shadow: unset;
+      `
+    )}
 `;
 export default Button;
