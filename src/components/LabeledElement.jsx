@@ -10,6 +10,7 @@ const ElementLabel = styled.p`
 
 const LabeledElement = styled.div`
   min-width: 15rem;
+  margin-right: 1rem;
   &:first-child {
     margin-left: 0;
   }
