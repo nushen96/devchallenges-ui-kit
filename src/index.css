@@ -3,13 +3,17 @@
 :root {
   --primary: #2962ff;
   --primary-dark: #0039CB;
-  --blue1: #3D5AFE;
+  --primary-shadow: rgba(41, 98, 255, 0.2);
+  --outline: #3D5AFE;
   --secondary: #455A64;
   --secondary-dark: #1C313A;
+  --secondary-shadow: rgba(69, 90, 100, 0.2);
   --danger: #D32F2F;
   --danger-dark: #9A0007;
+  --danger-shadow: rgba(211, 47, 47, 0.2);;
   --default: #e0e0e0;
   --default-dark: #aeaeae;
+  --default-shadow: rgba(51, 51, 51, 0.2);
   --gray1: #333333;
   --gray2: #4f4f4f;
   --gray3: #828282;

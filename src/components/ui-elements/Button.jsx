@@ -14,7 +14,7 @@ const dangerHoverStyles = css`
 `;
 const backgroundlessStyles = css`
   background-color: transparent;
-  color: var(--blue1);
+  color: var(--outline);
 `;
 const backgroundlessHoverStyles = css`
   background-color: rgba(41, 98, 255, 0.1);
@@ -94,7 +94,7 @@ const Button = styled.button`
     props.variant === "outline" &&
     backgroundlessStyles +
       `
-        border: 1px solid var(--blue1);
+        border: 1px solid var(--outline);
         &:hover,
         &:focus {
           ${backgroundlessHoverStyles}
