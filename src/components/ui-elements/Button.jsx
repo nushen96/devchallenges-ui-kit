@@ -199,10 +199,10 @@ const Button = styled.button`
     `}
 
     ${(props) =>
-      props.color === "secondary" &&
-      `
+    props.color === "secondary" &&
+    `
         background-color: var(--secondary);'
-        box-shadow: 0 2px 3px var(--secondary-shadow)
+        box-shadow: 0px 2px 3px var(--secondary-shadow);
         
         &:hover,
         &:focus {
@@ -214,11 +214,10 @@ const Button = styled.button`
       `}
 
       ${(props) =>
-        props.color === "danger" &&
-        `
+    props.color === "danger" &&
+    `
           background-color: var(--danger);
-          box-shadow: 0px 2px 3px var(--danger-shadow);
-          
+          box-shadow: 0 2px 3px var(--danger-shadow);
           &:hover,
           &:focus {
             ${dangerHoverStyles},
