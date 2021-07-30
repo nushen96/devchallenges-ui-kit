@@ -81,7 +81,7 @@ const ButtonsContent = () => {
       </ContentRow>
       <ContentRow>
         <LabeledElement label="&:hover, &:focus" secondState>
-          <Button>Default</Button>
+          <Button secondState>Default</Button>
         </LabeledElement>
         <LabeledElement label="&nbsp;">
           <Button color="primary" secondState>Primary</Button>
