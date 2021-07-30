@@ -201,7 +201,7 @@ const Button = styled.button`
     ${(props) =>
     props.color === "secondary" &&
     `
-        background-color: var(--secondary);'
+        background-color: var(--secondary);
         box-shadow: 0px 2px 3px var(--secondary-shadow);
         
         &:hover,
