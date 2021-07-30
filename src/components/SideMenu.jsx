@@ -4,12 +4,28 @@ const SideMenu = styled.div`
   flex: 1;
   padding: 2rem;
   background-color: #fafbfd;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 const MenuContainer = styled.div`
   margin-top: 10rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    margin-top: unset;
+    flex: 1;
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 const MenuItem = styled.button`
   background-color: transparent;

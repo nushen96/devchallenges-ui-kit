@@ -22,6 +22,10 @@ const ContentFooter = styled.p`
     font-weight: 700;
     color: inherit;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
 `;
 
 

@@ -14,6 +14,12 @@ const LabeledElement = styled.div`
   &:first-child {
     margin-left: 0;
   }
+
+  @media (max-width: 768px) {
+    min-width: 10rem;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+  }
 `
 
 const LabeledElementWrapper = ({children, label, secondState}) => {

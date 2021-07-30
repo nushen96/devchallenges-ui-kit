@@ -46,3 +46,19 @@ button {
   flex: 10;
   padding: 3rem 3rem 1rem;
 }
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .side-menu {
+    flex: unset;
+    display: flex;
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: row;
+  }
+}
