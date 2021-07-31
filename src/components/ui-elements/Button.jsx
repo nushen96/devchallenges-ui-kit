@@ -19,7 +19,7 @@ const backgroundlessStyles = css`
 const backgroundlessHoverStyles = css`
   background-color: rgba(41, 98, 255, 0.1);
 `;
-const textHoverStyles = null;
+
 const buttonWithIconStyles = css`
   display: flex;
   align-items: center;

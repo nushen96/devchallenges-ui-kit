@@ -4,6 +4,10 @@ const MainContainer = styled.div`
   padding: 3rem 3rem 1rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 2rem 2rem 1rem;
+  }
 `;
 
 const ContentTitle = styled.h1`

@@ -15,57 +15,11 @@ button {
 }
 
 .text-red {
-  color: #F7542E;
-}
-
-/*----------------- Side Menu ------------------*/
-
-.side-menu {
-  flex: 1;
-  padding: 2rem;
-  background-color: #FAFBFD;
-}
-
-.menu {
-  margin-top: 10rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.menu .menu-item {
-  background-color: transparent;
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  color: var(--gray5);
-  text-align: left;
-}
-
-.menu .menu-item.menu-item-active,
-.menu .menu-item:hover {
-  color: inherit;
-}
-
-
-/*----------------- Main Container ------------------*/
-.main-container {
-  flex: 10;
-  padding: 3rem 3rem 1rem;
+  color: #f7542e;
 }
 
 @media (max-width: 768px) {
   .app {
     flex-direction: column;
-  }
-
-  .side-menu {
-    flex: unset;
-    display: flex;
-    width: 100%;
-  }
-
-  .menu {
-    flex-direction: row;
   }
 }
