@@ -72,7 +72,7 @@ const MenuItem = styled.button`
   }
 `;
 
-const MobileMenu = () => {
+const MobileMenu = ({menuItems, handleContentChange, changeActiveMenuItem}) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -92,19 +92,24 @@ const MobileMenu = () => {
       </span>
       {isMobileMenuOpen && (
         <MobileMenuContainer className="mobile-menu-container">
-          <MenuItem>Colors</MenuItem>
-          <MenuItem>Typography</MenuItem>
-          <MenuItem>Spaces</MenuItem>
-          <MenuItem active>Buttons</MenuItem>
-          <MenuItem>Inputs</MenuItem>
-          <MenuItem>Grids</MenuItem>
+          {menuItems.map((menuItem) => (
+            <MenuItem
+              onClick={() => {
+                changeActiveMenuItem(menuItem.label);
+                handleContentChange(menuItem.label);
+              }}
+              active={menuItem.state === "active" || undefined}
+            >
+              {menuItem.label}
+            </MenuItem>
+          ))}
         </MobileMenuContainer>
       )}
     </div>
   );
 };
 
-const SideMenuWrapper = () => {
+const SideMenuWrapper = ({ handleContentChange }) => {
   const [menuItems, setMenuItems] = useState([
     { label: "Colors", state: "inactive" },
     { label: "Typography", state: "inactive" },
@@ -123,16 +128,27 @@ const SideMenuWrapper = () => {
     setMenuItems(newMenuItems);
   };
 
-
   return (
     <SideMenu>
       <Logo />
       <MenuContainer>
-        {menuItems.map(menuItem => (
-          <MenuItem onClick={() => changeActiveMenuItem(menuItem.label)} active={menuItem.state==="active" || undefined}>{menuItem.label}</MenuItem>
+        {menuItems.map((menuItem) => (
+          <MenuItem
+            onClick={() => {
+              changeActiveMenuItem(menuItem.label);
+              handleContentChange(menuItem.label);
+            }}
+            active={menuItem.state === "active" || undefined}
+          >
+            {menuItem.label}
+          </MenuItem>
         ))}
       </MenuContainer>
-      <MobileMenu></MobileMenu>
+      <MobileMenu
+        menuItems={menuItems}
+        changeActiveMenuItem={changeActiveMenuItem}
+        handleContentChange={handleContentChange}
+      ></MobileMenu>
     </SideMenu>
   );
 };
