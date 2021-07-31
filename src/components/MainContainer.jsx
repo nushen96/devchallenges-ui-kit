@@ -31,14 +31,27 @@ const ContentFooter = styled.p`
   }
 `;
 
-
-
 const MainContainerWrapper = ({ title, contentComponent }) => {
   return (
     <MainContainer>
       <ContentTitle>{title}</ContentTitle>
-      {contentComponent || (<div className="spacer" style={{flex: 1}}></div>)}
-      <ContentFooter>made with fierce by <a href="https://papidiagne.dev">papidiagne</a> - devChallenges.io</ContentFooter>
+      {contentComponent || (
+        <div
+          className="spacer"
+          style={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          Woups, no '{title}' elements at the moment
+        </div>
+      )}
+      <ContentFooter>
+        made with fierce by <a href="https://papidiagne.dev">papidiagne</a> -
+        devChallenges.io
+      </ContentFooter>
     </MainContainer>
   );
 };
