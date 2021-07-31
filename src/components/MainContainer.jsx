@@ -37,7 +37,7 @@ const MainContainerWrapper = ({ title, contentComponent }) => {
   return (
     <MainContainer>
       <ContentTitle>{title}</ContentTitle>
-      {contentComponent}
+      {contentComponent || (<div className="spacer" style={{flex: 1}}></div>)}
       <ContentFooter>made with fierce by <a href="https://papidiagne.dev">papidiagne</a> - devChallenges.io</ContentFooter>
     </MainContainer>
   );

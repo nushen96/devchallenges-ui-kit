@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styled from "styled-components";
 import Logo from "./Logo";
@@ -105,16 +105,32 @@ const MobileMenu = () => {
 };
 
 const SideMenuWrapper = () => {
+  const [menuItems, setMenuItems] = useState([
+    { label: "Colors", state: "inactive" },
+    { label: "Typography", state: "inactive" },
+    { label: "Spaces", state: "inactive" },
+    { label: "Buttons", state: "active" },
+    { label: "Inputs", state: "inactive" },
+    { label: "Grids", state: "inactive" },
+  ]);
+
+  const changeActiveMenuItem = (menuItemLabel) => {
+    let newMenuItems = menuItems.map((menuItem) => {
+      return menuItem.label === menuItemLabel
+        ? { ...menuItem, state: "active" }
+        : { ...menuItem, state: "inactive" };
+    });
+    setMenuItems(newMenuItems);
+  };
+
+
   return (
     <SideMenu>
       <Logo />
       <MenuContainer>
-        <MenuItem>Colors</MenuItem>
-        <MenuItem>Typography</MenuItem>
-        <MenuItem>Spaces</MenuItem>
-        <MenuItem active>Buttons</MenuItem>
-        <MenuItem>Inputs</MenuItem>
-        <MenuItem>Grids</MenuItem>
+        {menuItems.map(menuItem => (
+          <MenuItem onClick={() => changeActiveMenuItem(menuItem.label)} active={menuItem.state==="active" || undefined}>{menuItem.label}</MenuItem>
+        ))}
       </MenuContainer>
       <MobileMenu></MobileMenu>
     </SideMenu>
