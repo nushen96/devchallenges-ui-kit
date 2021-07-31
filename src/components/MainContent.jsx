@@ -5,7 +5,7 @@ const MainContent = styled.div`
   flex-direction: column;
   flex: 1;
   justify-content: space-between;
-  margin: 2rem 0;
+  margin: 1.3rem 0;
 
   @media (max-width: 768px) {
     gap: normal;
