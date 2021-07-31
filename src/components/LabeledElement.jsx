@@ -9,20 +9,20 @@ const ElementLabel = styled.p`
 `;
 
 const LabeledElement = styled.div`
-  min-width: 15rem;
+  min-width: 12rem;
   margin-right: 1rem;
-  &:first-child {
-    margin-left: 0;
-  }
 
   @media (max-width: 768px) {
+    margin-top: 0.5rem;
     min-width: 10rem;
     margin-right: 0.5rem;
-    margin-top: 1rem;
+    &:first-child {
+      margin-left: 0;
+    }
   }
-`
+`;
 
-const LabeledElementWrapper = ({children, label, secondState}) => {
+const LabeledElementWrapper = ({ children, label, secondState }) => {
   return (
     <LabeledElement>
       <ElementLabel secondState={secondState}>{label}</ElementLabel>

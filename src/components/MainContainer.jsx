@@ -4,7 +4,6 @@ const MainContainer = styled.div`
   padding: 3rem 3rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 `;
 
 const ContentTitle = styled.h1`

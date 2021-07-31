@@ -1,21 +1,17 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 const ContentRow = styled.div`
   display: flex;
   width: fit-content;
-  justify-content: space-between;
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
-  }
-
-  @media (max-width: 768px) {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 
     &:first-child {
-      margin-top: unset;
+      margin-top: 0;
     }
   }
-`
-export default ContentRow
+`;
+export default ContentRow;

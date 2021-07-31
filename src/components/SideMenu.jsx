@@ -26,7 +26,6 @@ const MenuContainer = styled.div`
   margin-top: 10rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 
   @media (max-width: 768px) {
     flex-direction: row;
@@ -53,6 +52,11 @@ const MenuItem = styled.button`
   font-size: inherit;
   color: ${(props) => (props.active ? "inherit" : "var(--gray5)")};
   text-align: left;
+  margin-top: 2rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   .mobile-menu-container & {
     margin-top: 0.5rem;
