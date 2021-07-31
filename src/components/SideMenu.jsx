@@ -54,6 +54,10 @@ const MenuItem = styled.button`
   text-align: left;
   margin-top: 2rem;
 
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
+
   &:first-child {
     margin-top: 0;
   }
