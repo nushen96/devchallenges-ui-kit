@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import {useState} from 'react'
 
 const defaultHoverStyles = css`
   border-color: var(--gray1);
@@ -57,13 +58,14 @@ const LabeledInput = styled.div`
 `;
 
 const InputWrapper = (props) => {
+    const [isFocused, setIsFocused] = useState(false)
   return (
     <LabeledInput {...props}>
-      <InputLabel className="input-label" {...props}>
+      <InputLabel isFocused={isFocused} className="input-label" {...props}>
         Label
       </InputLabel>
-      <InputContainer className="input-container" {...props}>
-        <Input
+      <InputContainer isFocused={isFocused} className="input-container" {...props}>
+        <Input onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)}
           className="input-area"
           {...props}
           placeholder={props.placeholder}
