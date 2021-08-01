@@ -4,8 +4,12 @@ const defaultHoverStyles = css`
   border-color: var(--gray1);
 `;
 
-const defaultFocusStyles = css`
+const defaultContainerFocusStyles = css`
   border-color: var(--primary);
+`;
+
+const defaultLabelFocusStyles = css`
+  color: var(--primary);
 `;
 
 const Input = styled.input`
@@ -14,14 +18,6 @@ const Input = styled.input`
   font-weight: inherit;
   flex: 1;
   outline: none;
-
-  .input-container > &:focus {
-      border-color: var(--primary)
-  }
-
-  .input-label + &:focus {
-      color: var(--primary)
-  }
 `;
 
 const InputContainer = styled.div`
@@ -51,11 +47,11 @@ const LabeledInput = styled.div`
 
   ${props => props.state==="focus" && `
     & > .input-container {
-        border-color: var(--primary)
+        ${defaultContainerFocusStyles}
     }
 
     & > .input-label {
-        color: var(--primary)
+        ${defaultLabelFocusStyles}
     }
   `}
 `;
