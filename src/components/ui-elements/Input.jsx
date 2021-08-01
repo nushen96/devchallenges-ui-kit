@@ -34,11 +34,18 @@ const InputContainer = styled.div`
   }
 
   ${(props) => props.state === "hover" && defaultHoverStyles}
+  ${props => props.isFocused && `
+    &, &:hover {
+        ${defaultContainerFocusStyles}
+    }  
+  `}
 `;
 
 const InputLabel = styled.label`
   font-size: 0.9em;
   font-weight: 400;
+
+  ${props => props.isFocused && defaultLabelFocusStyles}
 `;
 
 const LabeledInput = styled.div`
