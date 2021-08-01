@@ -3,9 +3,10 @@ import "./App.css";
 import SideMenu from "./components/SideMenu";
 import MainContainer from "./components/MainContainer";
 import ButtonsContent from "./components/ButtonsContent";
+import InputsContent from "./components/InputsContent"
 
 function App() {
-  const [displayedContentLabel, setDisplayedContentLabel] = useState("Buttons");
+  const [displayedContentLabel, setDisplayedContentLabel] = useState("Inputs");
   const [displayedComponent, setDisplayedComponent] = useState(
     <ButtonsContent />
   );
@@ -30,14 +31,14 @@ function App() {
         correspondingComponent = <ButtonsContent /> || null;
         break;
       case "Inputs":
-        correspondingComponent = null;
+        correspondingComponent = <InputsContent /> || null;
         break;
       case "Grids":
         correspondingComponent = null;
         break;
 
       default:
-        correspondingComponent = <ButtonsContent /> || null;
+        correspondingComponent = <InputsContent /> || null;
         break;
     }
     setDisplayedComponent(correspondingComponent);

@@ -114,8 +114,8 @@ const SideMenuWrapper = ({ handleContentChange }) => {
     { label: "Colors", state: "inactive" },
     { label: "Typography", state: "inactive" },
     { label: "Spaces", state: "inactive" },
-    { label: "Buttons", state: "active" },
-    { label: "Inputs", state: "inactive" },
+    { label: "Buttons", state: "inactive" },
+    { label: "Inputs", state: "active" },
     { label: "Grids", state: "inactive" },
   ]);
 
