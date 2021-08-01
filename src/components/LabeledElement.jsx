@@ -10,7 +10,7 @@ const ElementLabel = styled.p`
 
 const LabeledElement = styled.div`
   min-width: 12rem;
-  margin-right: 1rem;
+  margin-right: 4rem;
 
   @media (max-width: 768px) {
     margin-top: 0.5rem;
