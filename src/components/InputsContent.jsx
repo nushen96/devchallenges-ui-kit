@@ -29,16 +29,27 @@ const InputsContent = () => {
         </LabeledElement>
       </ContentRow>
       <ContentRow>
-        <LabeledElement label="<Input disabled />" secondState>
+        <LabeledElement label="<Input disabled />">
           <Input placeholder="Placeholder" disabled></Input>
         </LabeledElement>
       </ContentRow>
       <ContentRow>
-        <LabeledElement label="<Input disabled />" secondState>
-          <Input placeholder="Placeholder" helperText="Some helper text"></Input>
+        <LabeledElement
+          label="<Input helperText=”Some interesting text” />"
+        >
+          <Input
+            placeholder="Placeholder"
+            helperText="Some interesting text"
+          ></Input>
         </LabeledElement>
-        <LabeledElement label="<Input disabled />" secondState>
-          <Input placeholder="Placeholder" helperText="Some helper text" error></Input>
+        <LabeledElement
+          label="<Input helperText=”Some interesting text” error />"
+        >
+          <Input
+            placeholder="Placeholder"
+            helperText="Some interesting text"
+            error
+          ></Input>
         </LabeledElement>
       </ContentRow>
     </MainContent>
