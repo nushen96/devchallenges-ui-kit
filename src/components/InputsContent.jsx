@@ -18,7 +18,7 @@ const InputsContent = () => {
         </LabeledElement>
       </ContentRow>
       <ContentRow>
-        <LabeledElement label="<Input error />" secondState>
+        <LabeledElement label="<Input error />">
           <Input placeholder="Placeholder" error></Input>
         </LabeledElement>
         <LabeledElement label="&:hover" secondState>
@@ -34,17 +34,13 @@ const InputsContent = () => {
         </LabeledElement>
       </ContentRow>
       <ContentRow>
-        <LabeledElement
-          label="<Input helperText=”Some interesting text” />"
-        >
+        <LabeledElement label="<Input helperText=”Some interesting text” />">
           <Input
             placeholder="Placeholder"
             helperText="Some interesting text"
           ></Input>
         </LabeledElement>
-        <LabeledElement
-          label="<Input helperText=”Some interesting text” error />"
-        >
+        <LabeledElement label="<Input helperText=”Some interesting text” error />">
           <Input
             placeholder="Placeholder"
             helperText="Some interesting text"
