@@ -56,6 +56,11 @@ const InputsContent = () => {
           <Input placeholder="Placeholder" endIcon="email"></Input>
         </LabeledElement>
       </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Input value=”Text” />">
+          <Input placeholder="Placeholder" value="Text"></Input>
+        </LabeledElement>
+      </ContentRow>
     </MainContent>
   );
 };

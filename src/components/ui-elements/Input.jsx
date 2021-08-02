@@ -203,6 +203,7 @@ const InputWrapper = (props) => {
           className="input-area"
           {...props}
           placeholder={props.placeholder}
+          value={props.value || ""}
         ></Input>
       </InputContainer>
     </LabeledInput>
