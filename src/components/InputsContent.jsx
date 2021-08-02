@@ -28,6 +28,16 @@ const InputsContent = () => {
           <Input placeholder="Placeholder" error></Input>
         </LabeledElement>
       </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Input disabled />" secondState>
+          <Input placeholder="Placeholder" disabled></Input>
+        </LabeledElement>
+      </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Input disabled />" secondState>
+          <Input placeholder="Placeholder" helperText="Some helper text"></Input>
+        </LabeledElement>
+      </ContentRow>
     </MainContent>
   );
 };

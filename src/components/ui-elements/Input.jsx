@@ -51,6 +51,13 @@ const InputContainer = styled.div`
     }
   `}
   ${(props) => props.error && containerErrorStyles}
+  ${(props) =>
+    props.disabled &&
+    `
+    background-color: var(--gray6);
+    border-color: #e0e0e0;
+    pointer-events: none;
+  `}
 `;
 
 const InputLabel = styled.label`
@@ -75,6 +82,16 @@ const LabeledInput = styled.div`
 
     & > .input-label {
         ${defaultLabelFocusStyles}
+    }
+  `}
+
+  ${(props) =>
+    props.helperText &&
+    `
+    &::after {
+      content: "${props.helperText}";
+      font-size: 72%;
+      color: var(--gray3);
     }
   `}
 `;
