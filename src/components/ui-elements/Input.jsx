@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import {useState} from 'react'
+import { useState } from "react";
 
 const defaultHoverStyles = css`
   border-color: var(--gray1);
@@ -11,6 +11,14 @@ const defaultContainerFocusStyles = css`
 
 const defaultLabelFocusStyles = css`
   color: var(--primary);
+`;
+
+const containerErrorStyles = css`
+  border-color: var(--danger);
+`;
+
+const labelErrorStyles = css`
+  color: var(--danger);
 `;
 
 const Input = styled.input`
@@ -34,18 +42,23 @@ const InputContainer = styled.div`
   }
 
   ${(props) => props.state === "hover" && defaultHoverStyles}
-  ${props => props.isFocused && `
+  ${(props) =>
+    props.isFocused &&
+    !props.error &&
+    `
     &, &:hover {
         ${defaultContainerFocusStyles}
-    }  
+    }
   `}
+  ${(props) => props.error && containerErrorStyles}
 `;
 
 const InputLabel = styled.label`
   font-size: 0.9em;
   font-weight: 400;
 
-  ${props => props.isFocused && defaultLabelFocusStyles}
+  ${(props) => props.isFocused && defaultLabelFocusStyles}
+  ${(props) => props.error && !props.isHovered && labelErrorStyles}
 `;
 
 const LabeledInput = styled.div`
@@ -53,7 +66,9 @@ const LabeledInput = styled.div`
   flex-direction: column;
   font-family: "Noto Sans JP", sans-serif;
 
-  ${props => props.state==="focus" && `
+  ${(props) =>
+    props.state === "focus" &&
+    `
     & > .input-container {
         ${defaultContainerFocusStyles}
     }
@@ -65,14 +80,30 @@ const LabeledInput = styled.div`
 `;
 
 const InputWrapper = (props) => {
-    const [isFocused, setIsFocused] = useState(false)
+  const [isFocused, setIsFocused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <LabeledInput {...props}>
-      <InputLabel isFocused={isFocused} className="input-label" {...props}>
+      <InputLabel
+        isHovered={isHovered}
+        isFocused={isFocused}
+        className="input-label"
+        {...props}
+      >
         Label
       </InputLabel>
-      <InputContainer isFocused={isFocused} className="input-container" {...props}>
-        <Input onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)}
+      <InputContainer
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        isFocused={isFocused}
+        isHovered={isHovered}
+        className="input-container"
+        {...props}
+      >
+        <Input
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
           className="input-area"
           {...props}
           placeholder={props.placeholder}

@@ -17,6 +17,11 @@ const InputsContent = () => {
           <Input placeholder="Placeholder" state="focus"></Input>
         </LabeledElement>
       </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Input error />" secondState>
+          <Input placeholder="Placeholder" error></Input>
+        </LabeledElement>
+      </ContentRow>
     </MainContent>
   );
 };
