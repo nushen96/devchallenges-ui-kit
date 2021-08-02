@@ -48,6 +48,14 @@ const InputsContent = () => {
           ></Input>
         </LabeledElement>
       </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Input startIcon=”phone” />">
+          <Input placeholder="Placeholder" startIcon="phone"></Input>
+        </LabeledElement>
+        <LabeledElement label="<Input endIcon=”email” />">
+          <Input placeholder="Placeholder" endIcon="email"></Input>
+        </LabeledElement>
+      </ContentRow>
     </MainContent>
   );
 };

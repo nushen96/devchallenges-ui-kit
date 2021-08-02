@@ -21,6 +21,60 @@ const labelErrorStyles = css`
   color: var(--danger);
 `;
 
+const inputWithIconStyles = css`
+  &::before {
+    color: var(--gray3);
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 120%; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: "liga";
+  }
+
+  &::after {
+    color: var(--gray3);
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 120%; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: "liga";
+  }
+`;
+
 const Input = styled.input`
   border: none;
   font-size: inherit;
@@ -33,9 +87,8 @@ const InputContainer = styled.div`
   border: 1px solid var(--gray3);
   border-radius: 6px;
   padding: 1.3em 0.9em;
-  gap: 0.2em;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 
   &:hover {
     ${defaultHoverStyles}
@@ -58,6 +111,32 @@ const InputContainer = styled.div`
     border-color: #e0e0e0;
     pointer-events: none;
   `}
+
+  ${(props) => {
+    return (
+      props.startIcon &&
+      inputWithIconStyles +
+        `
+      &::before {
+        content:'${props.startIcon}';
+        margin-right: 0.5rem;
+      }
+    `
+    );
+  }}
+
+  ${(props) => {
+    return (
+      props.endIcon &&
+      inputWithIconStyles +
+        `
+      &::after {
+        content:'${props.endIcon}';
+        margin-left: 0.5rem;
+      }
+    `
+    );
+  }}
 `;
 
 const InputLabel = styled.label`
