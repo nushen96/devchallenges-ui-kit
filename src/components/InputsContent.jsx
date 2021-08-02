@@ -21,6 +21,12 @@ const InputsContent = () => {
         <LabeledElement label="<Input error />" secondState>
           <Input placeholder="Placeholder" error></Input>
         </LabeledElement>
+        <LabeledElement label="&:hover" secondState>
+          <Input placeholder="Placeholder" state="hover"></Input>
+        </LabeledElement>
+        <LabeledElement label="&:focus" secondState>
+          <Input placeholder="Placeholder" error></Input>
+        </LabeledElement>
       </ContentRow>
     </MainContent>
   );

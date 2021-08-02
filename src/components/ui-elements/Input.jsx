@@ -57,7 +57,7 @@ const InputLabel = styled.label`
   font-size: 0.9em;
   font-weight: 400;
 
-  ${(props) => props.isFocused && defaultLabelFocusStyles}
+  ${(props) => props.isFocused && !props.error && defaultLabelFocusStyles}
   ${(props) => props.error && !props.isHovered && labelErrorStyles}
 `;
 
