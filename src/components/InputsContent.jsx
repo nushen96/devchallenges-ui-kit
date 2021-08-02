@@ -37,6 +37,9 @@ const InputsContent = () => {
         <LabeledElement label="<Input disabled />" secondState>
           <Input placeholder="Placeholder" helperText="Some helper text"></Input>
         </LabeledElement>
+        <LabeledElement label="<Input disabled />" secondState>
+          <Input placeholder="Placeholder" helperText="Some helper text" error></Input>
+        </LabeledElement>
       </ContentRow>
     </MainContent>
   );

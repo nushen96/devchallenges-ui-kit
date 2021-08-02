@@ -91,7 +91,7 @@ const LabeledInput = styled.div`
     &::after {
       content: "${props.helperText}";
       font-size: 72%;
-      color: var(--gray3);
+      color: ${props.error ? "var(--danger)" : "var(--gray3)"}
     }
   `}
 `;
@@ -101,7 +101,7 @@ const InputWrapper = (props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <LabeledInput {...props}>
+    <LabeledInput isHovered={isHovered} {...props}>
       <InputLabel
         isHovered={isHovered}
         isFocused={isFocused}
