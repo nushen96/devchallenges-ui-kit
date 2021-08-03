@@ -86,7 +86,8 @@ const Input = styled.input`
 const InputContainer = styled.div`
   border: 1px solid var(--gray3);
   border-radius: 6px;
-  padding: ${props => (props.size && props.size === "sm") ? "0.7em 0.9em" : "1.3em 0.9em"};
+  padding: ${(props) =>
+    props.size && props.size === "sm" ? "0.7em 0.9em" : "1.3em 0.9em"};
   display: flex;
   align-items: center;
 
@@ -178,6 +179,7 @@ const LabeledInput = styled.div`
 const InputWrapper = (props) => {
   const [isFocused, setIsFocused] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [inputValue, setInputValue] = useState(props.value || "");
 
   return (
     <LabeledInput isHovered={isHovered} {...props}>
@@ -203,7 +205,11 @@ const InputWrapper = (props) => {
           className="input-area"
           {...props}
           placeholder={props.placeholder}
-          value={props.value || ""}
+          value={inputValue}
+          onChange={(e) => {
+            e.preventDefault();
+            setInputValue(e.target.value);
+          }}
         ></Input>
       </InputContainer>
     </LabeledInput>

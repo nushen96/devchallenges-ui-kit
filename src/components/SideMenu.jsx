@@ -85,7 +85,7 @@ const MobileMenu = ({menuItems, handleContentChange, changeActiveMenuItem}) => {
     >
       <span
         style={{ cursor: "pointer" }}
-        class="material-icons"
+        className="material-icons"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
         menu
