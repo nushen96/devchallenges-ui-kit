@@ -1,11 +1,11 @@
 .app {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
 }
 
 @media (max-width: 768px) {
   .app {
-    height: unset;
+    min-height: unset;
     min-height: 100vh;
   }
 }
