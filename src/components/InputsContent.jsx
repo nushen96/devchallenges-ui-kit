@@ -69,6 +69,11 @@ const InputsContent = () => {
           <Input placeholder="Placeholder" size="md"></Input>
         </LabeledElement>
       </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Input fullWidth />" fullWidth>
+          <Input placeholder="Placeholder" fullWidth></Input>
+        </LabeledElement>
+      </ContentRow>
     </MainContent>
   );
 };

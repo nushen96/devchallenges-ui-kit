@@ -90,6 +90,11 @@ const InputContainer = styled.div`
     props.size && props.size === "sm" ? "0.7em 0.9em" : "1.3em 0.9em"};
   display: flex;
   align-items: center;
+  ${(props) =>
+    props.fullWidth &&
+    `
+    width: 100%;
+  `}
 
   &:hover {
     ${defaultHoverStyles}
@@ -152,6 +157,8 @@ const LabeledInput = styled.div`
   display: flex;
   flex-direction: column;
   font-family: "Noto Sans JP", sans-serif;
+
+  ${(props) => props.fullWidth && `width: 100%`}
 
   ${(props) =>
     props.state === "focus" &&

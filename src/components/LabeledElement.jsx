@@ -12,7 +12,8 @@ const LabeledElement = styled.div`
   min-width: 12rem;
   margin-right: 4rem;
 
-  @media (max-width: 768px) {
+  ${(props) => props.fullWidth && `width: 100%`};
+  @media (max-width: 768px) {localhost: 
     margin-top: 0.5rem;
     min-width: 10rem;
     margin-right: 0.5rem;
@@ -22,11 +23,11 @@ const LabeledElement = styled.div`
   }
 `;
 
-const LabeledElementWrapper = ({ children, label, secondState }) => {
+const LabeledElementWrapper = (props) => {
   return (
-    <LabeledElement>
-      <ElementLabel secondState={secondState}>{label}</ElementLabel>
-      {children}
+    <LabeledElement {...props}>
+      <ElementLabel secondState={props.secondState}>{props.label}</ElementLabel>
+      {props.children}
     </LabeledElement>
   );
 };
