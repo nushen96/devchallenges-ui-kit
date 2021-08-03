@@ -1,6 +1,15 @@
 import styled, { css } from "styled-components";
 import { useState } from "react";
 
+const inputAreaStyles = css`
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  flex: 1;
+  outline: none;
+`;
+
 const defaultHoverStyles = css`
   border-color: var(--gray1);
 `;
@@ -76,11 +85,11 @@ const inputWithIconStyles = css`
 `;
 
 const Input = styled.input`
-  border: none;
-  font-size: inherit;
-  font-weight: inherit;
-  flex: 1;
-  outline: none;
+  ${inputAreaStyles}
+`;
+
+const MultilineInput = styled.textarea`
+  ${inputAreaStyles}
 `;
 
 const InputContainer = styled.div`
@@ -206,18 +215,35 @@ const InputWrapper = (props) => {
         className="input-container"
         {...props}
       >
-        <Input
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          className="input-area"
-          {...props}
-          placeholder={props.placeholder}
-          value={inputValue}
-          onChange={(e) => {
-            e.preventDefault();
-            setInputValue(e.target.value);
-          }}
-        ></Input>
+        {props.multiline ? (
+          <MultilineInput
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            className="input-area"
+            {...props}
+            placeholder={props.placeholder}
+            rows={props.row}
+            cols={props.col}
+            value={inputValue}
+            onChange={(e) => {
+              e.preventDefault();
+              setInputValue(e.target.value);
+            }}
+          ></MultilineInput>
+        ) : (
+          <Input
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            className="input-area"
+            {...props}
+            placeholder={props.placeholder}
+            value={inputValue}
+            onChange={(e) => {
+              e.preventDefault();
+              setInputValue(e.target.value);
+            }}
+          ></Input>
+        )}
       </InputContainer>
     </LabeledInput>
   );

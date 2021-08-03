@@ -74,6 +74,11 @@ const InputsContent = () => {
           <Input placeholder="Placeholder" fullWidth></Input>
         </LabeledElement>
       </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Input multiline row=”4” />">
+          <Input placeholder="Placeholder" multiline row="4"></Input>
+        </LabeledElement>
+      </ContentRow>
     </MainContent>
   );
 };
