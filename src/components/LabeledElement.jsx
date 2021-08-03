@@ -13,7 +13,7 @@ const LabeledElement = styled.div`
   margin-right: 4rem;
 
   ${(props) => props.fullWidth && `width: 100%`};
-  @media (max-width: 768px) {localhost: 
+  @media (max-width: 768px) {
     margin-top: 0.5rem;
     min-width: 10rem;
     margin-right: 0.5rem;
