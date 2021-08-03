@@ -86,7 +86,7 @@ const Input = styled.input`
 const InputContainer = styled.div`
   border: 1px solid var(--gray3);
   border-radius: 6px;
-  padding: 1.3em 0.9em;
+  padding: ${props => (props.size && props.size === "sm") ? "0.7em 0.9em" : "1.3em 0.9em"};
   display: flex;
   align-items: center;
 

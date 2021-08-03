@@ -61,6 +61,14 @@ const InputsContent = () => {
           <Input placeholder="Placeholder" value="Text"></Input>
         </LabeledElement>
       </ContentRow>
+      <ContentRow>
+        <LabeledElement label="<Input size=”sm” />">
+          <Input placeholder="Placeholder" size="sm"></Input>
+        </LabeledElement>
+        <LabeledElement label="<Input size=”md” />">
+          <Input placeholder="Placeholder" size="md"></Input>
+        </LabeledElement>
+      </ContentRow>
     </MainContent>
   );
 };
